@@ -36,7 +36,7 @@ az ad sp create-for-rbac -n "redpanda-connector" --role Reader --scopes /subscri
 ```
 docker-compose up -d
 ```
-3. Got to Redpanda console http://localhost:8080/ and confirm that messages are present on the topic
+3. Go to Redpanda console http://localhost:8080/ and confirm that messages are present on the topic
 43
 4. Copy file `adx-sink-config-template.json` and to `adx-sink-config-template.json` and fill it with proper values:
   * Service principal information (AppId, Secret and TenantId)
