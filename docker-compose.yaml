@@ -1,4 +1,4 @@
-name: redpanda-quickstart-one-broker
+name: redpanda-fabric
 
 networks:
   redpanda_network:
