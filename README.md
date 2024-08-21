@@ -64,7 +64,7 @@ curl http://localhost:8083/connectors/storm/status
 ```
 Storms | take 100
 ```
-<img src='docs/get-events.png' width='800'>
+<img src='docs/get-events.png' width='700'>
 
 ## Links
 * Lab source: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/get-data-kafka
