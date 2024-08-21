@@ -10,8 +10,8 @@ Flow:
 ## Prerequisites
 * Linux system with docker and docker-compose installed
 * Created KQL database on Microsoft Fabric - https://app.fabric.microsoft.com
-  * For new users 60 day trial can be used: https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
-* The Microsoft Entra service principal. It ca be created through the Azure portal or programmatically:
+    * For new users 60 day trial can be used: https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+* The Microsoft Entra service principal. It can be created through the Azure portal or programmatically:
 ```
 az login
 az account set --subscription YOUR_SUBSCRIPTION_GUID
