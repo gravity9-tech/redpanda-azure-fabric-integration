@@ -20,18 +20,18 @@ az ad sp create-for-rbac -n "redpanda-connector" --role Reader --scopes /subscri
 
 ## Setup
 1. Setup Microsoft Fabric
-  1. Go to https://app.fabric.microsoft.com/
-  2. Create new Eventhouse
-    * Go to `Real-Time Intelligence` page
-    * Click Create, select Eventhouse and provide a meaningful name for it.
-    ![Create Eventhouse](docs/create-eventhouse.png)
-  3. Once Eventhouse is created, create new KQL database
-    [Create KQL db](docs/create-kql-db.png)
-  4. Configure KQL database  
-    * For new KQL database, open `Query data`
-    [Create KQL db](docs/query-data.png)
-    * Run following commands:
-      * Replace YOUR_APP_ID and YOUR_TENANT_ID with the created earlier Service Principal.
+    1. Go to https://app.fabric.microsoft.com/
+    2. Create new Eventhouse
+        * Go to `Real-Time Intelligence` page
+        * Click Create, select Eventhouse and provide a meaningful name for it.
+        ![Create Eventhouse](docs/create-eventhouse.png)
+    3. Once Eventhouse is created, create new KQL database
+    ![Create KQL db](docs/create-kql-db.png)
+    4. Configure KQL database
+        * For new KQL database, open `Query data`
+        ![Create KQL db](docs/query-data.png)
+        * Run following commands:
+        * Replace YOUR_APP_ID and YOUR_TENANT_ID with the created earlier Service Principal.
 ```
 .create table Storms (StartTime: datetime, EndTime: datetime, EventId: int, State: string, EventType: string, Source: string)
 
@@ -48,9 +48,9 @@ docker-compose up -d
 ```
 3. Go to Redpanda console http://localhost:8080/ and confirm that messages are present on the topic
 4. Copy file `adx-sink-config-template.json` and to `adx-sink-config-template.json` and fill it with proper values:
-  * Service principal information (AppId, Secret and TenantId)
-  * Kusto URLs form Fabric (Ingestion and Query URL)
-  * KQL database name
+    * Service principal information (AppId, Secret and TenantId)
+    * Kusto URLs form Fabric (Ingestion and Query URL)
+    * KQL database name
 4. Start the connector
 ```
 curl -X POST -H "Content-Type: application/json" --data @adx-sink-config.json http://localhost:8083/connectors
