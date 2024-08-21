@@ -24,14 +24,16 @@ az ad sp create-for-rbac -n "redpanda-connector" --role Reader --scopes /subscri
     2. Create new Eventhouse
         * Go to `Real-Time Intelligence` page
         * Click Create, select Eventhouse and provide a meaningful name for it.
-        <img src='docs/create-eventhouse.png' width='500'>
+        <img src='docs/create-eventhouse.png' width='300'>
+
     3. Once Eventhouse is created, create new KQL database
-    <img src='docs/create-kql-db.png' width='500'>
+    <img src='docs/create-kql-db.png' width='300'>
+
     4. Configure KQL database
         * For new KQL database, open `Query data`
-        <img src='docs/query-data.png' width='500'>
-        * Run following commands:
-        * Replace YOUR_APP_ID and YOUR_TENANT_ID with the created earlier Service Principal.
+        <img src='docs/query-data.png' width='200'>
+
+        * Run following query. Please replace YOUR_APP_ID and YOUR_TENANT_ID with the created earlier Service Principal.
 ```
 .create table Storms (StartTime: datetime, EndTime: datetime, EventId: int, State: string, EventType: string, Source: string)
 
