@@ -53,17 +53,18 @@ docker-compose up -d
     * Service principal information (AppId, Secret and TenantId)
     * Kusto URLs form Fabric (Ingestion and Query URL)
     * KQL database name
-4. Start the connector
+5. Start the connector
 ```
 curl -X POST -H "Content-Type: application/json" --data @adx-sink-config.json http://localhost:8083/connectors
 
 # To check the status of the connector
 curl http://localhost:8083/connectors/storm/status
 ```
-5. Go Fabric and check the table for data to arrive
+6. Go Fabric and check the table for data to arrive
 ```
 Storms | take 100
 ```
+<img src='docs/get-events.png' width='800'>
 
 ## Links
 * Lab source: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/get-data-kafka
